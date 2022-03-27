@@ -18,13 +18,7 @@
             {
               QuickChick = super.QuickChick.overrideAttrs
                 (s : {
-                  preConfigure =
-                    let
-                      oldBuildLine = "; ocamlbuild ";
-                      newBuildLine = "; ocamlbuild -use-ocamlfind ";
-                    in
-                        "substituteInPlace Makefile --replace quickChickTool.byte quickChickTool.native\n" +
-                      "substituteInPlace src/quickChick.mlg --replace \"${oldBuildLine}\" \"${newBuildLine}\"";
+                 extraNativeBuildInputs = [ coq.ocaml coq.ocamlPackages.ocamlbuild ];
                 });
             });
 
