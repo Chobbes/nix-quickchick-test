@@ -18,7 +18,7 @@
             {
               QuickChick = super.QuickChick.overrideAttrs
                 (s : {
-                 extraNativeBuildInputs = [ coq.ocaml coq.ocamlPackages.ocamlbuild ];
+                  propagatedBuildInputs = s.propagatedBuildInputs ++ [ coq.ocaml ];
                 });
             });
 

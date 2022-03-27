@@ -25,12 +25,6 @@
         ] ++
         # Coq libraries
         [ QuickChick
-        ] ++
-        # These ocaml packages have to come from coq.ocamlPackages to
-        # avoid disagreements between ocaml compiler versions.
-        [ ocaml
-          ocamlbuild
-          findlib
         ];
 
       src = ./.;
